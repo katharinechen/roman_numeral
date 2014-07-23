@@ -42,11 +42,18 @@ def roman_numerals(number)
     resultArray << "I"*num
   end
 
-  return resultArray.join("")
+  result = resultArray.join("")
+  result.gsub!("DCCCC", "CM")
+  result.gsub!("CCCC", "CD")
+  result.gsub!("LXXXX", "XC")
+  result.gsub!("XXXX", "XL")
+  result.gsub!("VIIII", "IX")
+  result.gsub!("IIII", "IV")
 
+  return result
 end
 
-# puts roman_numerals(000)
+
 
 
 
